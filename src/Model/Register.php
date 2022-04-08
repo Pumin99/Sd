@@ -8,7 +8,7 @@ class Register extends Db {
     public function getAllRegister(){
 
         $sql = "
-        SELECT *  FROM register
+        SELECT *  FROM register order by id desc
         ";
         $stmt = $this->pdo->query($sql);
         $data = $stmt->fetchAll();
