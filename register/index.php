@@ -25,9 +25,9 @@ $register=$registerobj->getAllRegister();
     <div class="content-header">
     <div class="container-fluid">
         <div class="row">
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <h1 class="m-0 text-dark text-lg">จัดการข้อมูล</h1>
-        </div>
+        </div> -->
         <!-- <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="Position_form.php">เพิ่มข้อมูลตำแหน่ง</a></li>
@@ -44,7 +44,56 @@ $register=$registerobj->getAllRegister();
     <div class="container-fluid">
         <br>
     <!-- Default box -->
-    <section class="content">
+    <h3 class="text-center display-5">ค้นหาข้อมูลทหารกองเกิน</h3>
+            <form action=">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>หมายเลขประจำตัวประชาชน</label>
+                                    <input type="search" class="form-control" placeholder="หมายเลขประจำตัวประชาชน" value="">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>พ.ศ. เกิด</label>
+                                    <select class="select2" style="width: 100%;">
+                                    <?php
+
+                                    $registeryear=(date('Y')+543)-17; // คนเกิด พ.ศ.ที่ต้องลงบัญชี
+                                    $countyear=$registeryear-12; // นับถึงแค่อายุ 29
+                                    for ($y = $countyear; $y <= $registeryear; $y++) { ?>
+                                    <option value ="<?=$y?>" <?=($registeryear==$y? 'selected' : '')?> > <?=$y?> </option>
+                                    <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label>ตำบล</label>
+                                    <select class="select2" style="width: 100%;">
+                                        <option>สบปราบ</option>
+                                        <option>สมัย</option>
+                                        <option>แม่กัวะ</option>
+                                        <option>นายาง</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <input type="search" class="form-control form-control-lg" placeholder="ชื่อ - สกุล" value="">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-lg btn-default">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         <div class="col-12">
             <div class="card card-primary card-tabs card-outline card-outline-tabs">
             <div class="card-header p-0 pt-1">
@@ -96,8 +145,6 @@ $register=$registerobj->getAllRegister();
             </div>
         </div>         
 
-    </section>
-
 
     </div><!-- /.container-fluid -->
 </section>
@@ -109,11 +156,16 @@ $register=$registerobj->getAllRegister();
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/footer.php";
 ?>
 
-<script>
+<!-- <script>
     $(document).ready( function () {
         $('#viewSd1').DataTable();
     } );
+</script> -->
+<script>
+    $(function () {
+      $('.select2').select2()
+    });
 </script>
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/endpage.php";
-  ?>
+?>

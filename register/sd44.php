@@ -58,7 +58,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
         $mpdf->SetFont('sarabun','B');
         $mpdf->SetFontSize(20);
         $mpdf->SetXY(100, 75);
-        $mpdf->Cell(90,10,$register['name']."    ".$register['surname'],0,1);
+        $mpdf->Cell(90,10,$register['name'],0,1);
         
         $mpdf->SetFont('sarabun','R');
         $mpdf->SetFontSize(18);
