@@ -1,5 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Sarabun&;display=swap" rel="stylesheet">
-
 <?php
 // Require composer autoload
 require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
@@ -17,15 +15,15 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
                 __DIR__ . '/tmp',
             ]),
             'fontdata' => $fontData + [
-                'sarabun' => [
-                    'R' => 'THSarabunNew.ttf',
-                    'I' => 'THSarabunNew-Italic.ttf',
-                    'B' => 'THSarabunNew-Bold.ttf',
-                    'BI' =>'THSarabunNew-BoldItalic.ttf',
+                'sarabun9' => [
+                    'R' => 'THSarabunIT9.ttf',
+                    'I' => 'THSarabunIT9Italic.ttf',
+                    'B' => 'THSarabunIT9Bold.ttf',
+                    'BI' =>'THSarabunIT9BoldItalic.ttf',
                 ]
             ],
             'format' => [210, 330],
-            'default_font' => 'sarabun'
+            'default_font' => 'sarabun9'
         ]);
 
 
@@ -35,7 +33,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
         
 
         $mpdf->AddPage('P');
-        $mpdf->SetFont('sarabun','R');
+        $mpdf->SetFont('sarabun9','R');
         $mpdf->SetFontSize(16);
         $mpdf->SetXY(125, 50);
         $mpdf->WriteCell(0,5,$register['district'],0,1);
@@ -53,12 +51,12 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
         $mpdf->SetXY(165, 66);
         $mpdf->WriteCell(0,5,'๒๕๖๖',0,1);
         
-        $mpdf->SetFont('sarabun','B');
+        $mpdf->SetFont('sarabun9','B');
         $mpdf->SetFontSize(20);
         $mpdf->SetXY(100, 75);
         $mpdf->Cell(90,10,$register['name'],0,1);
         
-        $mpdf->SetFont('sarabun','R');
+        $mpdf->SetFont('sarabun9','R');
         $mpdf->SetFontSize(18);
         $mpdf->SetXY(90, 90);
         $mpdf->WriteCell(0,5,$register['idcard'],0,1);
