@@ -20,6 +20,10 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
 // print_r($register);
 ?>
 <style>
+  /* #pdf{
+
+    display:none;
+  } */
     .fa-file {
     color:black;
     }
@@ -55,12 +59,12 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
     <section class="content">
       <div class="container-fluid">
        <br> 
-      <h5 class="mb-2">แบบพิมพ์</h5>
+      <h5 class="mb-2">แบบพิมพ์  <?php echo $register['name'].' '.$register['surname']  ?></h5>
         <div class="row">
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
               <!-- <span class="info-box-icon bg-info"><i class="fa-solid fa-address-card"></i></span> -->
-              <a class="btn btn-app bg-info" id="Sd44" href="Sd44.php" target="Sd44">
+              <a class="btn btn-app bg-info" id="Sd44" href="Sd44.php?id=<?=$register['id'];?>" target="Register">
               <i class="fa-solid fa-address-card fa-3x"></i>
                 </a>
               <div class="info-box-content">
@@ -75,7 +79,7 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
               <!-- <span class="info-box-icon bg-success"><i class="fa-solid fa-id-card-clip"></i></span> -->
-              <a class="btn btn-app bg-success" href="Sd1.php" target="Sd1">
+              <a class="btn btn-app bg-success" href="Sd1.php?id=<?=$register['id'];?>" target="Register">
               <i class="fa-solid fa-file fa-3x"></i>
               </a>
               <div class="info-box-content">
@@ -123,9 +127,14 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
     </section>
     <!-- /.content -->
     <!-- <iframe name="Sd1" id="sd1" src="" width="100%" height="500px" style=display:none;> -->
-    <iframe name="" src="" width="100%" height="500px">
+  <div class="row">
+    <div class="col-12">
+       <iframe name="Register" width="100%" height="500px" frameBorder="0">
+    </div>
+  </div>
 
     
+
   </div>
   <!-- /.content-wrapper -->
 <
@@ -133,14 +142,3 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/footer.php";
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/endpage.php";
 ?>
-  <script>
-    $(document).ready(function(){
-
-      $("#Sd44").click(function(){
-        console.log($("#Sd44").attr("target"));
-       
-      });
-
-    });
-
-  </script>

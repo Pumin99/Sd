@@ -13,11 +13,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/include/sidebar.php";
 <?php
 
 use App\Model\Register;       
-$registerobj = new Register();
 
-$register=$registerobj->getAllRegister();
-
-// print_r($register);
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -42,25 +38,23 @@ $register=$registerobj->getAllRegister();
     <!-- Main content -->
     <section class="content">
     <div class="container-fluid">
-        <br>
     <!-- Default box -->
-    <h3 class="text-center display-5">ค้นหาข้อมูลทหารกองเกิน</h3>
-            <form action=">
+    <h3 class="text-center display-5 mb-3">ค้นหาข้อมูลทหารกองเกิน</h3>
+            <form action="">
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-group">
                                     <label>หมายเลขประจำตัวประชาชน</label>
-                                    <input type="search" class="form-control" placeholder="หมายเลขประจำตัวประชาชน" value="">
+                                    <input name="idcard" type="search" class="form-control" placeholder="หมายเลขประจำตัวประชาชน" value="<?php echo $_REQUEST['idcard'];?>">
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="form-group">
                                     <label>พ.ศ. เกิด</label>
-                                    <select class="select2" style="width: 100%;">
+                                    <select class="select2" style="width: 100%;" name="birth_y">
                                     <?php
-
                                     $registeryear=(date('Y')+543)-17; // คนเกิด พ.ศ.ที่ต้องลงบัญชี
                                     $countyear=$registeryear-12; // นับถึงแค่อายุ 29
                                     for ($y = $countyear; $y <= $registeryear; $y++) { ?>
@@ -72,18 +66,20 @@ $register=$registerobj->getAllRegister();
                             <div class="col-4">
                                 <div class="form-group">
                                     <label>ตำบล</label>
-                                    <select class="select2" style="width: 100%;">
-                                        <option>สบปราบ</option>
-                                        <option>สมัย</option>
-                                        <option>แม่กัวะ</option>
-                                        <option>นายาง</option>
+  
+                                    <select class="select2" style="width: 100%;" name="district">
+                                        <option value="">กรุณาเลือก</option>
+                                        <option value="สบปราบ" <?php if($_REQUEST['district']=='สบปราบ'){ echo "selected"; } ?>>สบปราบ</option>
+                                        <option value="สมัย" <?php if($_REQUEST['district']=='สมัย'){ echo "selected"; } ?>>สมัย</option>
+                                        <option value="แม่กัวะ" <?php if($_REQUEST['district']=='แม่กัวะ'){ echo "selected"; } ?>>แม่กัวะ</option>
+                                        <option value="นายาง" <?php if($_REQUEST['district']=='นายาง'){ echo "selected"; } ?>>นายาง</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group input-group-lg">
-                                <input type="search" class="form-control form-control-lg" placeholder="ชื่อ - สกุล" value="">
+                                <input name ="search" type="search" class="form-control form-control-lg" placeholder="ชื่อ - สกุล" value="<?php echo $_REQUEST['search'];?>">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-lg btn-default">
                                         <i class="fa fa-search"></i>
@@ -96,18 +92,18 @@ $register=$registerobj->getAllRegister();
             </form>
         <div class="col-12">
             <div class="card card-primary card-tabs card-outline card-outline-tabs">
-            <div class="card-header p-0 pt-1">
+            <!-- <div class="card-header p-0 pt-1">
                 <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
                 <li class="pt-2 px-3"><h3 class="card-title">บัญชีทหารกองเกิน</h3></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="card-body">
                 <div class="tab-content" id="custom-tabs-two-tabContent">
                 <div class="tab-pane fade show active" id="position" role="tabpanel" aria-labelledby="position-tab">
                 <table class="table table-striped text-sm" id="viewSd1" width="100%">
                     <thead>
                         <th>#</th>
-                        <th>สด.9 <br> เล่มที่/เลขที่</th>
+                        <th>สด.9 เล่มที่/เลขที่</th>
                         <th>ชื่อ</th>
                         <th>นามสกุล</th>
                         <th>เลขประชาชน</th>
@@ -117,6 +113,8 @@ $register=$registerobj->getAllRegister();
                     </thead>
                     <tbody>
                     <?php
+                    $registerobj = new Register();
+                    $register=$registerobj->getAllRegister($_REQUEST);
                     $n=0;
                         foreach($register as $registers){
                             $n++;

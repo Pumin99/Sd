@@ -6,14 +6,6 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
 
         use App\Model\Register;
         
-        $registerobj = new Register();
-
-       
-
-        $register=$registerobj->getRegisterById(1);
-
-        // print_r($register);
-  
         $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
         $fontDirs = $defaultConfig['fontDir'];
         
@@ -35,7 +27,13 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
             'format' => [210, 330],
             'default_font' => 'sarabun'
         ]);
+
+
+        $registerobj = new Register();
         
+        $register=$registerobj->getRegisterById($_REQUEST['id']);
+        
+
         $mpdf->AddPage('P');
         $mpdf->SetFont('sarabun','R');
         $mpdf->SetFontSize(16);

@@ -1,5 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Sarabun&;display=swap" rel="stylesheet">
-
 <?php
 // Require composer autoload
 require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
@@ -8,10 +6,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
         
         $registerobj = new Register();
 
-       
-
-        $register=$registerobj->getRegisterById(1);
-
+        $register=$registerobj->getRegisterById($_REQUEST['id']);
         // print_r($register);
   
         $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();

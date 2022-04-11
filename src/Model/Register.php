@@ -5,16 +5,52 @@ use App\Database\Db;
 
 class Register extends Db {
 
-    public function getAllRegister(){
+    public function getAllRegister($filters=[]){
+
+		$where="";
+		if($filters['idcard']){
+			$where .=" AND idcard = :idcard";
+		}else{
+			unset($filters['idcard']);
+		}
+
+		if($filters['birth_y']){
+			$where .=" AND birth_y = :birth_y";
+		}else{
+			unset($filters['birth_y']);
+		}
+
+		if($filters['district']){
+			$where .=" AND district = :district";
+		}else{
+			unset($filters['district']);
+		}
+
+		if($filters['search']){
+			$where .=" AND (name like :search OR surname like :search )";
+			$filters['search'] = "%{$filters['search']}%";
+		}else{
+			unset($filters['search']);
+		}
 
         $sql = "
-        SELECT *  FROM register order by id desc
+        	SELECT
+				*
+			FROM
+				register
+			WHERE
+				id  > 0
+				{$where}
+			ORDER BY
+				id desc
         ";
-        $stmt = $this->pdo->query($sql);
+        $stmt = $this->pdo->prepare($sql);
+		$stmt->execute($filters);
         $data = $stmt->fetchAll();
         return $data;
 	}
-	    public function getRegisterById($id) {
+	
+	public function getRegisterById($id) {
 		$sql = "
 			SELECT
                 *
