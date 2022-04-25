@@ -122,6 +122,69 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
           </div>
           <!-- /.col -->
         </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <!-- <span class="info-box-icon bg-info"><i class="fa-solid fa-address-card"></i></span> -->
+              <a class="btn btn-app bg-info" id="Sd44" href="Sd44.php?id=<?=$register['id'];?>" target="Register">
+              <i class="fa-solid fa-address-card fa-3x"></i>
+                </a>
+              <div class="info-box-content">
+                <span class="info-box-text">หมายเรียก </span>
+                <span class="info-box-number">สด.35</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <!-- <span class="info-box-icon bg-success"><i class="fa-solid fa-id-card-clip"></i></span> -->
+              <a class="btn btn-app bg-success" href="Sd1.php?id=<?=$register['id'];?>" target="Register">
+              <i class="fa-solid fa-file-invoice-dollar fa-3x"></i>
+              </a>
+              <div class="info-box-content">
+                <span class="info-box-text">หนังสือส่งปรับ ม.18</span>
+                <span class="info-box-number">สด.9</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <!-- <span class="info-box-icon bg-warning"><i class="fa-solid fa-file-lock"></i></span> -->
+              <a class="btn btn-app bg-warning">
+                <i class="fa-solid fa-book fa-3x"></i>
+              </a>
+              <div class="info-box-content">
+                <span class="info-box-text">ใบสำคัญ</span>
+                <span class="info-box-number">สด.9</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-3 col-sm-6 col-12">
+            <div class="info-box">
+              <!-- <span class="info-box-icon bg-danger"><i class="fa-solid fa-file-invoice-dollar"></i></span> -->
+              <a class="btn btn-app bg-danger">
+                <i class="fa-solid fa-file fa-3x"></i>
+              </a>
+              <div class="info-box-content">
+                <span class="info-box-text">คำร้องทั่วไป</span>
+                <span class="info-box-number">ปค.14</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
