@@ -102,7 +102,7 @@
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>
-                รอ......
+                รายงานประจำปี 
                 <i class="right fas fa-angle-left"></i>
             </p>
             </a>
@@ -110,9 +110,9 @@
             
             
             <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Inline</p>
+                <a href="#" class="nav-link">
+                <i class="far fa-file nav-icon"></i>
+                <p>สด.2 ประจำปี </p>
                 </a>
             </li>
             </ul>
