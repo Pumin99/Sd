@@ -11,7 +11,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/include/navbar.php";
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/sidebar.php";
 ?>
  
-
+    
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -35,7 +35,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/include/sidebar.php";
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <br>
+      <br>
       <!-- Default box -->
       <section class="content">
       <div class="card card-primary card-outline">
@@ -64,7 +64,7 @@ require $_SERVER['DOCUMENT_ROOT']."/Sd/include/sidebar.php";
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+	
   <?php 
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/footer.php";
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/endpage.php";
