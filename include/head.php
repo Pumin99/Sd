@@ -30,6 +30,8 @@ if(count($ex)>=4){
   
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo $part;?>dist/css/adminlte.min.css">
+ 
+
   <link rel="stylesheet" href="<?php echo $part;?>dist/css/Sarabun.css" />
 
 

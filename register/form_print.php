@@ -1,9 +1,11 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']."/Sd/vendor/autoload.php";
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/head.php";
+
 ?>
 <body class="hold-transition sidebar-mini layout-fixed sidebar-collapse text-md">
 <div class="wrapper"> 
+
 <?php 
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/navbar.php";
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/sidebar.php";
@@ -17,48 +19,31 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
 
 // print_r($register);
 ?>
-<style>
-  /* #pdf{
-
-    display:none;
-  } */
-    .fa-file {
-    color:black;
-    }
-    .fa-address-card{
-    color:black;
-    }
-    .fa-file-invoice-dollar{
-    color:black;
-    }
-</style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <!-- <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
-          </div>
-          <div class="col-sm-6">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+        <!-- <div class="col-sm-6">
+            <h1 class="m-0 text-dark text-lg">จัดการข้อมูล</h1>
+        </div> -->
+        <!-- <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+            <li class="breadcrumb-item"><a href="Position_form.php">เพิ่มข้อมูลตำแหน่ง</a></li>
+
             </ol>
-          </div>
+        </div> -->
+            </div>
         </div>
-      </div>
-    </div> -->
+    </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
-
     <section class="content">
-      <div class="container-fluid">
-       <br> 
-      <h5 class="mb-2">แบบพิมพ์  <?php echo $register['name'].' '.$register['surname']  ?></h5>
-      
+        <div class="container-fluid">
+    <!-- Default box -->
+        <h4 class="mb-2">แบบพิมพ์  <?php echo $register['name'].' '.$register['surname']  ?></h4>     
         <div class="row">
           <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
@@ -167,7 +152,7 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-          <div class="col-md-3 col-sm-6 col-12">
+        <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box">
               <!-- <span class="info-box-icon bg-danger"><i class="fa-solid fa-file-invoice-dollar"></i></span> -->
               <a class="btn btn-app bg-danger">
@@ -183,23 +168,23 @@ $register=$registerobj->getRegisterById($_REQUEST['id']);
           </div>
           <!-- /.col -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+
+        <!-- <div class="row">
+            <div class="col-12">
+                <iframe name="Register" width="100%" height="500px" frameBorder="0">
+            </div>
+        </div> -->
+
+        </div><!-- /.container-fluid -->
     </section>
+<!-- /.content -->
 
-    <!-- /.content -->
-    <!-- <iframe name="Sd1" id="sd1" src="" width="100%" height="500px" style=display:none;> -->
-    <div class="row">
-      <div class="col-12">
-        <iframe name="Register" width="100%" height="500px" frameBorder="0">
-      </div>
-    </div>
+</div>
+<!-- /.content-wrapper -->
 
-    
-  </div>
-  <!-- /.content-wrapper -->
-<
+
 <?php 
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/footer.php";
+
 require $_SERVER['DOCUMENT_ROOT']."/Sd/include/endpage.php";
 ?>

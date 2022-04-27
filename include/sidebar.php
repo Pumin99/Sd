@@ -58,7 +58,6 @@
                 </li>
             </ul>
         </li>
-
             </ul>
         </li>
         <?php } ?>
@@ -90,12 +89,12 @@
             </p>
             </a>
             <ul class="nav nav-treeview">
-            <li class="nav-item">
-                <a href="<?php echo $part;?>troops/sd1.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>สด.1</p>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a href="<?php echo $part;?>troops/sd1.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>สด.1</p>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="nav-item has-treeview">
@@ -107,14 +106,12 @@
             </p>
             </a>
             <ul class="nav nav-treeview">
-            
-            
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="far fa-file nav-icon"></i>
-                <p>สด.2 ประจำปี </p>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="far fa-file nav-icon"></i>
+                    <p>สด.2 ประจำปี </p>
+                    </a>
+                </li>
             </ul>
         </li>
 
